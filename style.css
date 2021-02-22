@@ -45,7 +45,7 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    min-height: 60vh;
+  
     margin: 30px;
     gap: 10px;
     color: white
@@ -170,4 +170,12 @@ input {
         margin-left: 50px;
     margin-right: 50px;
    }
+}
+
+.percentage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
 }
