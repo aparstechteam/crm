@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 70vh;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right top, #051937, #111b35, #191e33, #1f2132, #242430);
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.nav_button {
+    padding: 7px 15px;
+    color: white;
+    background: rgb(9, 81, 236);
+    border-radius: 5px;
+    text-decoration: none;
+    outline: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 60vh;
+    margin: 30px;
+    gap: 10px;
+    color: white
+}
+
+.single_card {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 60px;
+    gap: 10px;
+    border-radius: 10px;
+    background: rgba(223, 223, 223, 0.226);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(17.5px);
+    -webkit-backdrop-filter: blur(17.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+}
+
+h1,
+h3 {
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    .links_copy>button {
+        margin-top: 5px;
+    }
+}
+
+/* terms */
+
+.terms {
+    font-family: 'SolaimanLipi', sans-serif;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.links_copy {
+    color: black;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+
+}
+
+input {
+    margin-top: 5px;
+    outline: none;
+    padding: 5px;
+    width: 90%;
+    border: 1px solid rgba(128, 128, 128, 0.349);
+}
+
+.links {
+    min-height: 60vh;
+
+    gap: 10px;
+    color: white;
+       margin-left: 40px;
+    margin-right: 40px;
+}
+
+.links_copy>button {
+    padding: 7px;
+    background: rgb(108, 108, 250);
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.links_copy>button:hover {
+    transform: scale(1.1)
+}
+
+.promos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+
+.active{
+    color: white;
+     background-color: red;
+}
+
+@media screen and (min-width: 480px) {
+   .promos{
+        margin-left: 50px;
+    margin-right: 50px;
+   }
+}

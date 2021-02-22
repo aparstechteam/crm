@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and conditions</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Apar's Student Group </h1>
+        <h3>Central Affiliation</h3>
+    </header>
+    <nav>
+        <a href="/" class="nav_button " id="dashboard">Dashboard</a>
+        <a href="/links" class="nav_button" id="links"> All Links & Promos</a>
+        <a href="/terms" class="nav_button" id="terms">T&C</a>
+    </nav>
+    <div class="links">
+
+        <h3 style="margin-top: 20px;">All Links & Promos</h3> </br>
+        <div class="promos" id="promos">
+
+            <div class="links_copy" v-for="(a,i) in affiliations">
+                <h3>{{a.product}}</h3>
+                <div v-if="a.active_promo_code">
+
+                    <span>Promo Code: {{a.active_promo_code}}</span> <br>
+                    <span>Price Before Promo: {{a.price_before_promo}} ৳</span> <br>
+                    <span>Price After Promo: {{a.price_after_promo}} ৳</span>
+                </div>
+
+                <input readonly :id="`link${i}`" :value="a.link">
+
+                <button class="btn" :data-clipboard-target="`#link${i}`">
+                    Copy
+                </button>
+            </div>
+            <!-- <div class="links_copy">
+                <p>HSC CRASH COURSE </p><br>
+
+                <input disabled id="hsccrash"
+                    value="https://10minuteschool.com/special/hsc-crash-course-2021?aff=inaff025">
+
+                <button class="btn" data-clipboard-target="#ssccrash">
+                    Copy
+                </button>
+            </div>
+            <div class="links_copy">
+                <p>Physics 1st Paper Digital Interactive PDF </p><br>
+                <input disabled id="spdf"
+                    value="https://store.10minuteschool.com/books/hsc-physics-1st-guide?aff=inaff025">
+
+                <button class="btn" data-clipboard-target="#ssccrash">
+                    Copy
+                </button>
+            </div>
+            <div class="links_copy">
+                <p>Chemistry Bundle PDF </p><br>
+                <input disabled id="chepdf"
+                    value="https://store.10minuteschool.com/items/chemistry-bundle?aff=inaff025">
+
+                <button class="btn" data-clipboard-target="#ssccrash">
+                    Copy
+                </button>
+            </div> -->
+        </div>
+
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#promos',
+            data: {
+                affiliations: []
+            },
+            methods: {
+                getproducts() {
+                    fetch(
+                            'https://script.google.com/macros/s/AKfycbw50K98PQ1n1DZEvT41phCCsqkky1QthQxAW2Zzwu4KNzyrs7NMgRU7/exec'
+                        )
+                        .then(res => res.json()).then((data) => {
+                            this.affiliations = data.affiliations
+
+                        })
+                        .catch(e => console.log(e))
+                }
+            },
+            created() {
+                this.getproducts();
+            },
+        })
+        var clipboard = new ClipboardJS('.btn');
+
+        clipboard.on('success', function (e) {
+            alert("Link Copied")
+
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function (e) {
+            alert("error copying")
+        });
+    </script>
+</body>
+
+</html>
