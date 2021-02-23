@@ -41,11 +41,11 @@ nav {
 }
 
 .container {
-    display: flex;
+    display: grid;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-  
+    grid-template-columns: 1fr 1fr;
     margin: 30px;
     gap: 10px;
     color: white
@@ -84,7 +84,7 @@ h3 {
     text-align: center;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) and (min-width: 0px) {
     h2 {
         font-size: 40px;
     }
@@ -96,6 +96,23 @@ h3 {
     .links_copy>button {
         margin-top: 5px;
     }
+.desktoponly {
+        display: none!important;
+    }
+    
+}
+
+@media screen and (min-width: 480px)  {
+    .promos {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .percentage {
+        display: none!important;
+    }
+
+
 }
 
 /* terms */
@@ -129,7 +146,7 @@ input {
 
     gap: 10px;
     color: white;
-       margin-left: 40px;
+    margin-left: 40px;
     margin-right: 40px;
 }
 
@@ -156,38 +173,33 @@ input {
     gap: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    
+
 }
 
 
-.active{
+.active {
     color: white;
-     background-color: red;
+    background-color: red;
 }
 
-@media screen and (min-width: 480px) {
-   .promos{
-        margin-left: 50px;
-    margin-right: 50px;
-   }
-}
 
-.percentage{
+
+.percentage {
     display: grid;
     justify-content: center;
     align-items: center;
-    
-    
+    gap: 10px;
+    margin-top: 45px;
 }
 
-.percentage>div{
-    
+.percentage>div {
+color: white;
     padding: 10px;
     border-radius: 10px;
-background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 10.0px );
--webkit-backdrop-filter: blur( 10.0px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.0px);
+    -webkit-backdrop-filter: blur(10.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
