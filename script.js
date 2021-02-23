@@ -1,6 +1,6 @@
-let count = document.getElementById("count");
-let sales = document.getElementById("sales");
-let earnings = document.getElementById("earnings");
+// let count = document.getElementById("count");
+// let sales = document.getElementById("sales");
+// let earnings = document.getElementById("earnings");
 let dashboard = document.getElementById("dashboard");
 let links = document.getElementById("links");
 let terms = document.getElementById("terms");
@@ -16,10 +16,10 @@ fetch(
   .then((data) => data.json())
   .then((res) => {
     let { total_number, total_amount, total_earning } = res.data;
-    count.innerHTML = total_number;
-    sales.innerHTML = total_amount + " <span style='font-size:35px'>tk</span>";
-    earnings.innerHTML =
-      total_earning + " <span style='font-size:35px'>tk</span>";
+    // count.innerHTML = total_number;
+    // sales.innerHTML = total_amount + " <span style='font-size:35px'>tk</span>";
+    // earnings.innerHTML =
+    //   total_earning + " <span style='font-size:35px'>tk</span>";
     controlpanel.innerHTML = total_earning * 0.3;
     upcoming_campaign.innerHTML = total_earning * 0.3;
     gifts.innerHTML = total_earning * 0.3;
