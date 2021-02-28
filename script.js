@@ -1,10 +1,6 @@
 let dashboard = document.getElementById("dashboard");
 let links = document.getElementById("links");
 let terms = document.getElementById("terms");
-let controlpanelm = document.getElementById("controlpanelm");
-let upcoming_campaignm = document.getElementById("upcoming_campaignm");
-let giftsm = document.getElementById("giftsm");
-let donationm = document.getElementById("donationm");
 
 let controlpanel = document.getElementById("controlpanel");
 let upcoming_campaign = document.getElementById("upcoming_campaign");
@@ -18,10 +14,6 @@ fetch(
   .then((res) => {
     let { total_earning } = res.data;
 
-    controlpanelm.innerHTML = Math.round(total_earning * 0.3);
-    upcoming_campaignm.innerHTML = Math.round(total_earning * 0.3);
-    giftsm.innerHTML = Math.round(total_earning * 0.3);
-    donationm.innerHTML = Math.round(total_earning * 0.1);
     controlpanel.innerHTML =
       Math.round(total_earning * 0.3) +
       " <span style='font-size:35px'>tk</span>";
