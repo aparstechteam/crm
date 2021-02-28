@@ -18,6 +18,13 @@ fetch(
   .then((res) => {
     let { total_earning } = res.data;
 
+<<<<<<< HEAD
+=======
+     controlpanelm.innerHTML = Math.round(total_earning * 0.3);
+    upcoming_campaignm.innerHTML = Math.round(total_earning * 0.3);
+    giftsm.innerHTML = Math.round(total_earning * 0.3);
+    donationm.innerHTML = Math.round(total_earning * 0.1);
+>>>>>>> 539c02cb519340c93e75dc270d9e3fcde8637cec
     controlpanel.innerHTML =
       Math.round(total_earning * 0.3) +
       " <span style='font-size:35px'>tk</span>";
@@ -33,6 +40,7 @@ fetch(
   });
 
 setInterval(() => {
+<<<<<<< HEAD
   fetch(
     "https://script.google.com/macros/s/AKfycbwer7YqkBVBVV4gfeQUKvqwSVDyVNLjIe1oRQXEY2sKEN3LfpYZcvotxw/exec"
   )
@@ -53,6 +61,33 @@ setInterval(() => {
         Math.round(total_earning * 0.1) +
         " <span style='font-size:35px'>tk</span>";
     });
+=======
+ 
+fetch(
+  "https://script.google.com/macros/s/AKfycbwer7YqkBVBVV4gfeQUKvqwSVDyVNLjIe1oRQXEY2sKEN3LfpYZcvotxw/exec"
+)
+  .then((data) => data.json())
+  .then((res) => {
+    let {  total_earning } = res.data;
+  
+    controlpanelm.innerHTML = Math.round(total_earning * 0.3);
+    upcoming_campaignm.innerHTML = Math.round(total_earning * 0.3);
+    giftsm.innerHTML = Math.round(total_earning * 0.3);
+    donationm.innerHTML = Math.round(total_earning * 0.1);
+    controlpanel.innerHTML =
+      Math.round(total_earning * 0.3) +
+      " <span style='font-size:35px'>tk</span>";
+    upcoming_campaign.innerHTML =
+      Math.round(total_earning * 0.3) +
+      " <span style='font-size:35px'>tk</span>";
+    gifts.innerHTML =
+      Math.round(total_earning * 0.3) +
+      " <span style='font-size:35px'>tk</span>";
+    donation.innerHTML =
+      Math.round(total_earning * 0.1) +
+      " <span style='font-size:35px'>tk</span>";
+  });
+>>>>>>> 539c02cb519340c93e75dc270d9e3fcde8637cec
 }, 60000);
 
 let path = window.location.pathname;
