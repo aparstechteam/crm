@@ -41,11 +41,10 @@ nav {
 }
 
 .container {
-    display: grid;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
     margin: 30px;
     gap: 10px;
     color: white
@@ -53,6 +52,7 @@ nav {
 
 .single_card {
     margin: 30px;
+ 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,9 +96,9 @@ h3 {
     .links_copy>button {
         margin-top: 5px;
     }
-.desktoponly {
+/* .desktoponly {
         display: none!important;
-    }
+    } */
     
 }
 
