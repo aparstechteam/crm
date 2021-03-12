@@ -7,52 +7,28 @@ let upcoming_campaign = document.getElementById("upcoming_campaign");
 let gifts = document.getElementById("gifts");
 let donation = document.getElementById("donation");
 
-fetch(
-  "https://script.google.com/macros/s/AKfycbwer7YqkBVBVV4gfeQUKvqwSVDyVNLjIe1oRQXEY2sKEN3LfpYZcvotxw/exec"
-)
-  .then((data) => data.json())
-  .then((res) => {
-    let { total_earning } = res.data;
-
-    controlpanel.innerHTML =
-      Math.round(total_earning * 0.3) +
-      " <span style='font-size:35px'>tk</span>";
-    upcoming_campaign.innerHTML =
-      Math.round(total_earning * 0.3) +
-      " <span style='font-size:35px'>tk</span>";
-    gifts.innerHTML =
-      Math.round(total_earning * 0.3) +
-      " <span style='font-size:35px'>tk</span>";
-    donation.innerHTML =
-      Math.round(total_earning * 0.1) +
-      " <span style='font-size:35px'>tk</span>";
-  });
-
-setInterval(() => {
+function getTransactionData() {
   fetch(
-    "https://script.google.com/macros/s/AKfycbwer7YqkBVBVV4gfeQUKvqwSVDyVNLjIe1oRQXEY2sKEN3LfpYZcvotxw/exec"
+    "https://script.google.com/macros/s/AKfycbw50K98PQ1n1DZEvT41phCCsqkky1QthQxAW2Zzwu4KNzyrs7NMgRU7/exec?type=transaction"
   )
     .then((data) => data.json())
     .then((res) => {
-      let { total_earning } = res.data;
+      let { cp, uc, g, d } = res.data;
 
-      controlpanelm.innerHTML = Math.round(total_earning * 0.3);
-      upcoming_campaignm.innerHTML = Math.round(total_earning * 0.3);
-      giftsm.innerHTML = Math.round(total_earning * 0.3);
-      donationm.innerHTML = Math.round(total_earning * 0.1);
       controlpanel.innerHTML =
-        Math.round(total_earning * 0.3) +
-        " <span style='font-size:35px'>tk</span>";
+        Math.round(cp) + " <span style='font-size:35px'>tk</span>";
       upcoming_campaign.innerHTML =
-        Math.round(total_earning * 0.3) +
-        " <span style='font-size:35px'>tk</span>";
+        Math.round(uc) + " <span style='font-size:35px'>tk</span>";
       gifts.innerHTML =
-        Math.round(total_earning * 0.3) +
-        " <span style='font-size:35px'>tk</span>";
+        Math.round(g) + " <span style='font-size:35px'>tk</span>";
       donation.innerHTML =
-        Math.round(total_earning * 0.1) +
-        " <span style='font-size:35px'>tk</span>";
+        Math.round(d) + " <span style='font-size:35px'>tk</span>";
     });
+}
+
+getTransactionData();
+setInterval(() => {
+  getTransactionData();
 }, 60000);
 
 let path = window.location.pathname;
