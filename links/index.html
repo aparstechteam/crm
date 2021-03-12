@@ -40,34 +40,7 @@
                     Copy
                 </button>
             </div>
-            <!-- <div class="links_copy">
-                <p>HSC CRASH COURSE </p><br>
 
-                <input disabled id="hsccrash"
-                    value="https://10minuteschool.com/special/hsc-crash-course-2021?aff=inaff025">
-
-                <button class="btn" data-clipboard-target="#ssccrash">
-                    Copy
-                </button>
-            </div>
-            <div class="links_copy">
-                <p>Physics 1st Paper Digital Interactive PDF </p><br>
-                <input disabled id="spdf"
-                    value="https://store.10minuteschool.com/books/hsc-physics-1st-guide?aff=inaff025">
-
-                <button class="btn" data-clipboard-target="#ssccrash">
-                    Copy
-                </button>
-            </div>
-            <div class="links_copy">
-                <p>Chemistry Bundle PDF </p><br>
-                <input disabled id="chepdf"
-                    value="https://store.10minuteschool.com/items/chemistry-bundle?aff=inaff025">
-
-                <button class="btn" data-clipboard-target="#ssccrash">
-                    Copy
-                </button>
-            </div> -->
         </div>
 
     </div>
@@ -81,10 +54,10 @@
             methods: {
                 getproducts() {
                     fetch(
-                            'https://script.google.com/macros/s/AKfycbw50K98PQ1n1DZEvT41phCCsqkky1QthQxAW2Zzwu4KNzyrs7NMgRU7/exec'
+                            'https://script.google.com/macros/s/AKfycbw50K98PQ1n1DZEvT41phCCsqkky1QthQxAW2Zzwu4KNzyrs7NMgRU7/exec?type=affiliation'
                         )
                         .then(res => res.json()).then((data) => {
-                            this.affiliations = data.affiliations
+                            this.affiliations = data.data
 
                         })
                         .catch(e => console.log(e))
