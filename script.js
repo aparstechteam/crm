@@ -9,7 +9,7 @@ let donation = document.getElementById("donation");
 
 function getTransactionData() {
   fetch(
-    "https://script.google.com/macros/s/AKfycbw50K98PQ1n1DZEvT41phCCsqkky1QthQxAW2Zzwu4KNzyrs7NMgRU7/exec?type=transaction"
+    "https://script.google.com/macros/s/AKfycbxXymHtCychzrYA0KAJ-IsDFhAlBLEMu5XwLnT9SMfZTGaQut4Xw9FFKxVGfqFse3kR/exec?type=transaction"
   )
     .then((data) => data.json())
     .then((res) => {
